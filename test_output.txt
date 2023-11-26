@@ -1,0 +1,7 @@
+WELCOME TO FLIPZON:
+   1) Enter as Admin
+   3) Show Available Deals
+   4) Enter as Customer
+   5) Exit the Application
+5
+Check exit
