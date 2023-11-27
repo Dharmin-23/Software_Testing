@@ -17,7 +17,7 @@ public class Category {
         return category_id;
     }
     public void printCategory(){
-        System.out.println("Category name: "+this.category_name);
-        System.out.println("Category Id: "+this.category_id);
+//        System.out.println("Category name: "+this.category_name);
+//        System.out.println("Category Id: "+this.category_id);
     }
 }

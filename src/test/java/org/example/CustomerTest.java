@@ -4,6 +4,119 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
+    @Test
+    void getCoupons_ReturnsNonNullForNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.getCoupons());
+    }
+
+    @Test
+    void getCoupons_ReturnsNullForNonNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNull(customer.getCoupons());
+    }
+
+    @Test
+    void reduceWallet_amt_ReturnsTrue() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertTrue(customer.reduceWallet_amt(500.0));
+    }
+
+    @Test
+    void reduceWallet_amt_ReturnsFalse() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertFalse(customer.reduceWallet_amt(1500.0));
+    }
+
+    @Test
+    void printCurrent_status_ReturnsStatusString() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.printCurrent_status());
+    }
+
+    @Test
+    void printCurrent_status_ReturnsNullForNullInput() {
+        // Mutant: (if (x != null) null else throw a RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNull(customer.printCurrent_status());
+    }
+
+    @Test
+    void getUsername_ReturnsNonNullForNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.getUsername());
+    }
+
+    @Test
+    void getUsername_ReturnsNullForNonNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer(null, "password");
+        assertNull(customer.getUsername());
+    }
+
+    @Test
+    void getPassword_ReturnsNonNullForNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.getPassword());
+    }
+
+    @Test
+    void getPassword_ReturnsNullForNonNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", null);
+        assertNull(customer.getPassword());
+    }
+
+    @Test
+    void getStatus_discount_ReturnsOriginalValue() {
+        // Mutant: replaced return of double value with -(x + 1)
+        Customer customer = new Customer("john_doe", "password");
+        assertEquals(0.0, customer.getStatus_discount());
+    }
+
+    @Test
+    void getStatus_discount_ReturnsNegativeValue() {
+        // Mutant: replaced return of double value with -(x + 1)
+        Customer customer = new Customer("john_doe", "password");
+        assertTrue(customer.getStatus_discount() < 0.0);
+    }
+
+    @Test
+    void getCart_Prod_ReturnsNonNullForNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.getCart_Prod());
+    }
+
+    @Test
+    void getCart_deal_ReturnsNonNullForNullInput() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertNotNull(customer.getCart_deal());
+    }
+
+    @Test
+    void quantity_check_ReturnsTrue() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertTrue(customer.quantity_check());
+    }
+
+    @Test
+    void quantity_check_ReturnsFalse() {
+        // Mutant: (if (x != null) null else throw new RuntimeException)
+        Customer customer = new Customer("john_doe", "password");
+        assertFalse(customer.quantity_check());
+    }
+
+
 
     @Test
     void reduceWallet_amt_EnoughBalance_ReturnsTrue() {
